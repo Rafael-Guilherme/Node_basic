@@ -28,7 +28,6 @@ async function run() {
       }),
     });
 
-    //Uncomment this line to see the import working in slow motion (open the db.json)
     await wait(1000)
   }
 }
