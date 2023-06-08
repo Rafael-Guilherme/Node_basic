@@ -1,15 +1,15 @@
-import fs from "node:fs";
-import { parse } from "csv-parse";
+import fs from "node:fs"
+import { parse } from "csv-parse"
 
-const csvPath = new URL("./arquivo_para_node.csv", import.meta.url);
+const csvPath = new URL("./arquivo_para_node.csv", import.meta.url)
 
-const stream = fs.createReadStream(csvPath);
+const stream = fs.createReadStream(csvPath)
 
 const csvParse = parse({
   delimiter: ",",
   skipEmptyLines: true,
   fromLine: 2,
-});
+})
 
 async function run() {
   const linesParse = stream.pipe(csvParse);
@@ -32,7 +32,7 @@ async function run() {
   }
 }
 
-run();
+run()
 
 function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
